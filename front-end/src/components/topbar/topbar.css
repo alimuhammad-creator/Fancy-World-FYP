@@ -13,6 +13,19 @@
   flex: 3;
 }
 
+.logoutbutton{
+  height: 30px;
+  width: 60px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  background: none;
+  color: white;
+  font-size: 17px;
+  
+}
+
+
 .logo {
   font-size: 24px;
   margin-left: 20px;
@@ -70,6 +83,7 @@
   margin-right: 15px;
   cursor: pointer;
   position: relative;
+  
 }
 
 .topbarIconBadge {

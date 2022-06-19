@@ -54,6 +54,7 @@ export default function Rightbar({ user }) {
             <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
           </span>
         </div> */}
+        <span className="sponsored">Sponsored</span>
         <video controls loop autoPlay className="rightbarAd" src="assets/Ad.mp4" alt="" />
         {/* <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">

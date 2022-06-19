@@ -54,10 +54,13 @@ export default function Sidebar() {
             <School className="sidebarIcon" />
             <span className="sidebarListItemText">Courses</span>
           </li> */}
-          <img className="rightbarchicken" src="/assets/chickens/chickenleft.png" alt="" />
-          <img className="rightbarchicken" src="/assets/chickens/chickenleft.png" alt="" />
-          <img className="rightbarchicken" src="/assets/chickens/chickenleft.png" alt="" />
-          <img className="rightbarchicken" src="/assets/chickens/chickenleft.png" alt="" />
+          <span className="sidebarhighlight">SSF Highlights</span>
+          <video controls loop autoPlay className="sidebarvideo" src="assets/sidebar.mp4" alt="" />
+          
+          <button className="youtubesidebar">Watch More on YouTube</button>
+         
+          {/* <img className="rightbarchicken" src="/assets/chickens/chickenleft.png" alt="" /> */}
+          
         </ul>
         {/* <button className="sidebarButton">Show More</button>
         <hr className="sidebarHr" />

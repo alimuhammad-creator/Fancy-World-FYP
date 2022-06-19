@@ -79,6 +79,7 @@
 .loginForgot{
     text-align: center;
     color: #1775ee;
+    cursor: pointer;
 }
 
 .loginRegisterButton{

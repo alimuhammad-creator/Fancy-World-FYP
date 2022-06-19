@@ -10,6 +10,9 @@ import {
 } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Messenger from "./pages/messenger/Messenger";
+import Mainhome from "./pages/mainhome/Mainhome";
+import About from "./pages/about/About";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -22,6 +25,15 @@ function App() {
         <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
         <Route path="/register">
           {user ? <Redirect to="/" /> : <Register />}
+        </Route>
+        <Route path="/messenger">
+          {!user ? <Redirect to="/" /> : <Messenger />}
+        </Route>
+        <Route path="/mainhome">
+          {user ? <Redirect to="/" /> : <Mainhome />}
+        </Route>
+        <Route path="/about">
+          {user ? <Redirect to="/" /> : <About />}
         </Route>
         <Route path="/profile/:username">
           <Profile />

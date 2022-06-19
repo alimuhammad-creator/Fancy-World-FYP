@@ -26,8 +26,26 @@ export default function Topbar() {
       </div> */}
      
         <div className="topbarLinks">
-          <span className="topbarLink">About</span>
-          <span className="topbarLink">Contact US</span>
+
+        <Link to="/mainhome" style={{ textDecoration: "none"}}>
+       <span className="topbarLink">Home</span>
+       </Link>
+
+       <Link to="/about" style={{ textDecoration: "none" }}>
+        <span className="topbarLink">About</span>
+        </Link>
+
+
+        <Link to="/login" style={{ textDecoration: "none" }}>
+        <span className="topbarLink">Login</span>
+        </Link>
+
+        <Link to="/" style={{ textDecoration: "none" }}>
+        <span className="topbarLink">Register</span>
+        </Link>
+        
+        
+        
         </div>
      
     </div>

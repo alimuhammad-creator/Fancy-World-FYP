@@ -35,6 +35,29 @@
   list-style: none;
 }
 
+.youtubesidebar{
+  width: 285px;
+  height: 50px;
+  background-color: #FF0000;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebarvideo {
+  width: 285px;
+  height: 200px;
+  margin: 2px;
+}
+
+.sidebarhighlight{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2px;
+  margin-left: 12px;}
+
 .sidebarListItem {
   display: flex;
   align-items: center;

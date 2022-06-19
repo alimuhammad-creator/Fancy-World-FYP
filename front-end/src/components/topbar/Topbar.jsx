@@ -5,9 +5,17 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
+
+
 export default function Topbar() {
   const { user } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+ function logout(){
+    localStorage.clear();
+    window.location.href = '/login';
+  };
+
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
@@ -26,8 +34,15 @@ export default function Topbar() {
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
-          <span className="topbarLink">About</span>
-          <span className="topbarLink">Contact US</span>
+          
+        {/* <Link to="/about" style={{ textDecoration: "none" }}>
+        <span className="topbarLink">About</span>
+        </Link>
+        
+       <Link to="/mainhome" style={{ textDecoration: "none"}}>
+       <span className="topbarLink">Home</span>
+       </Link> */}
+
         </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
@@ -35,14 +50,20 @@ export default function Topbar() {
             <span className="topbarIconBadge">1</span> */}
           </div>
           <div className="topbarIconItem">
-            <Chat />
-            <span className="topbarIconBadge">3</span>
+          <Link to="/messenger" style={{ textDecoration: "none", color: "white"}}> 
+          <Chat />
+            <span className="topbarIconBadge">1</span>
+        </Link>
+
+            {/* <Chat />
+            <span className="topbarIconBadge">3</span> */}
           </div>
           <div className="topbarIconItem">
             {/* <Notifications />
             <span className="topbarIconBadge">1</span> */}
           </div>
         </div>
+        
         <Link to={`/profile/${user.username}`}>
           <img
             src={
@@ -54,6 +75,7 @@ export default function Topbar() {
             className="topbarImg"
           />
         </Link>
+        <button className="logoutbutton" onClick={logout}>Logout</button>
       </div>
     </div>
   );

@@ -1,0 +1,134 @@
+ .abouttitle{
+    margin-top: 100px;
+    font-size: 80px;
+    color: rgb(0, 0, 0);
+    /* font-weight: 500; */
+    text-align: center;
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+    
+    margin-left: 280px;
+    /* padding: 50px 0; */
+
+}
+
+.aboutmainphoto{
+
+    margin-top: 55px;
+    width: 470px;
+    height: 420px;
+    margin-left: 120px;
+}
+
+
+.paraabout{
+font-size: 27px;
+position: absolute; 
+margin-top: 60px;
+width: 520px; 
+margin-left: 650px;
+text-align: justify;
+
+}
+
+
+.ourteamtitle{
+    position: absolute;
+    margin-top: 600px;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    /* font-weight: 500; */
+    /* text-align: center; */
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+    
+    margin-left: -80px;
+}
+
+
+.sirabout{
+    margin-top: 220px;
+    width: 350px;
+    height: 350px;
+    margin-left: 40px;
+    
+}
+
+.teamdiv{
+    margin-left: 75px;
+}
+
+.sakshiabout{
+    width: 300px;
+    height: 300px;
+    
+}
+
+.aliabout{
+    width: 300px;
+    height: 300px;
+    
+}
+
+.taemname{
+    margin-left: 90px;
+
+}
+
+.teamirfan{
+font-size: 30px;
+margin-left: 60px;
+align-items: center;
+
+}
+
+.teamsakshi{
+    font-size: 30px;
+    margin-left: 150px;
+    align-items: center;
+    
+}
+
+.teamali{
+        font-size: 30px;
+        margin-left: 132px;
+        align-items: center;
+        
+}
+
+.irfandesc{
+    font-size: 20px;
+    margin-left: 195px;
+    align-items: center;
+    
+}
+
+.sakshidesc{
+    font-size: 20px;
+    margin-left: 208px;
+    align-items: center;
+    
+}
+
+.alidesc{
+    font-size: 20px;
+    margin-left: 185px;
+    align-items: center;
+    
+}
+
+.footer{
+    margin-top: 100px;
+    height: 200px;
+    width: 100%;
+    background-color: #674EA7;
+    }
+  
+    .footerback{
+      height: 50px;
+      width: 100%;
+      background-color: #674EA7;
+      }
+  
+
+
+
+
