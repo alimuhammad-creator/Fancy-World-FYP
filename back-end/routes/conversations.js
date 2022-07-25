@@ -5,7 +5,7 @@ const Conversation = require("../models/Conversation");
 
 router.post("/", async (req, res) => {
   const newConversation = new Conversation({
-    members: [req.body.senderId, req.body.receiverId],
+    members: [req.body.senderId, req.body.receiverId], 
   });
 
   try {
@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//get conv of a user
+//get conv of a user  
 
 router.get("/:userId", async (req, res) => {
   try {

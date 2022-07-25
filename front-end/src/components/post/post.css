@@ -1,9 +1,10 @@
 .post {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 0px;
   -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-  margin: 30px 0;
+  box-shadow: 0px 0px 16px -8px rgba(97, 99, 97, 0.68);
+  margin: 20px 0;
+  /* border: 10px solid rgb(255, 174, 0); */
 }
 
 .postWrapper {

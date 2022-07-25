@@ -1,4 +1,5 @@
 import "./sidebar.css";
+import { Link } from "react-router-dom";
 // import {
 //   RssFeed,
 //   Chat,
@@ -57,7 +58,11 @@ export default function Sidebar() {
           <span className="sidebarhighlight">SFF Highlights</span>
           <video controls loop autoPlay className="sidebarvideo" src="assets/sidebar.mp4" alt="" />
           
-          <button className="youtubesidebar">Watch More on YouTube</button>
+          <Link >
+          <button
+           href="https://www.youtube.com/c/SultanabadFancyFarming/videos" 
+           className="youtubesidebar">Watch More on YouTube</button>
+          </Link>
          
           {/* <img className="rightbarchicken" src="/assets/chickens/chickenleft.png" alt="" /> */}
           
