@@ -4,12 +4,11 @@ import { MoreVert } from "@material-ui/icons";
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import { useContext, useEffect, useState, useRef} from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { PermMedia, Cancel } from "@material-ui/icons";
 
 
 export default function Post({ post }) {
@@ -18,6 +17,11 @@ export default function Post({ post }) {
   const [user, setUser] = useState({});
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user: currentUser } = useContext(AuthContext);
+
+  const [editable, setEditable] = useState(false);
+
+  const [name, setName] = useState("");
+  const [editPostId, setEditPostId] = useState(null)
 
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
@@ -47,44 +51,37 @@ export default function Post({ post }) {
   const likeHandler = () => {
     try {
       axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
-    } catch (err) {}
+    } catch (err) { }
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
   };
 
-const deleteHandler = () => {
-  try {
-    axios.delete("/posts/" + post._id, {userId: "6245aebc58a3a42100e43e94"});
-    } catch (err){}
-};
+  const deleteHandler = () => {
+    try {
+      axios.delete("/posts/" + post._id);
+    } catch (err) { }
+  };
 
-//temp
-// const [file, setFile] = useState(null);
-// const desc = useRef();
+  const handleEdit = (post) => {
+    setEditable(true)
+    setName(post.desc)
+    setEditPostId(post._id)
+  }
 
-// const submitHandler = async (e) => {
-//   e.preventDefault();
-//   const newPost = {
-//     userId: user._id,
-//     desc: desc.current.value,
-//   };
-//   if (file) {
-//     const data = new FormData();
-//     const fileName = Date.now() + file.name;
-//     data.append("name", fileName);
-//     data.append("file", file);
-//     newPost.img = fileName;
-//     console.log(newPost);
-//     try {
-//       await axios.post("/upload", data);
-//     } catch (err) {}
-//   }
-//   try {
-//     await axios.post("/posts", newPost);
-//     window.location.reload();
-//   } catch (err) {}
-// };
-//temp
+  const handleEditPost = async (e) => {
+    //e.preventdefualt();
+    e.stopPropagation();
+
+
+    try {
+      await axios.put("/posts/" + editPostId, { ...post, desc: name });
+      setEditable(false)
+      setName("")
+      setEditPostId(null)
+    } catch (err) { }
+
+
+  }
 
   return (
     <div className="post">
@@ -107,64 +104,59 @@ const deleteHandler = () => {
           </div>
 
           <IconButton
-          aria-label="more"
-          onClick={handleClick}
-          aria-haspopup="true"
-          aria-controls="long-menu"
+            aria-label="more"
+            onClick={handleClick}
+            aria-haspopup="true"
+            aria-controls="long-menu"
           >
             <MoreVert />
           </IconButton>
 
           {currentUser._id === post.userId && (
-          <Menu 
-          anchorEl={anchorEl} 
-          keepMounted onClose={handleClose} 
-          open={open}>
-            <MenuItem
-            onClick={handleClose}
-            >
-              <button className="posteditbutton" >Edit &nbsp;</button>
+            <Menu
+              anchorEl={anchorEl}
+              keepMounted onClose={handleClose}
+              open={open}>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <button className="posteditbutton" onClick={() => handleEdit(post)} >Edit &nbsp;</button>
 
-              <button className="postdeletebutton" onClick={deleteHandler} >Delete</button>
-            </MenuItem>
-         </Menu>
-         )}
+                <button className="postdeletebutton" onClick={deleteHandler} >Delete</button>
+              </MenuItem>
+            </Menu>
+          )}
 
-         {/* temp */}
-
-
-         {/* <hr className="shareHr" />
-        {file && (
-          <div className="shareImgContainer">
-            <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
-            <Cancel className="shareCancelImg" onClick={() => setFile(null)} />
-          </div>
-        )}
-        <form className="shareBottom" onSubmit={submitHandler}>
-          <div className="shareOptions">
-            <label htmlFor="file" className="shareOption">
-              <PermMedia htmlColor="tomato" className="shareIcon" />
-              <span className="shareOptionText">Add Photo</span>
-              <input
-                style={{ display: "none" }}
-                type="file"
-                id="file"
-                accept=".png,.jpeg,.jpg"                        
-                onChange={(e) => setFile(e.target.files[0])}
-              />
-            </label>
-
-          </div>
-          <button className="shareButton" type="submit">
-            Share
-          </button>
-        </form> */}
-
-         {/* temp */}
-  
         </div>
         <div className="postCenter">
-          <span className="postText">{post?.desc}</span>
+
+          {editable ? (
+            <form onSubmit={handleEditPost}>
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                onBlur={() => {
+                  setEditable(false);
+                  setName("");
+                }}
+                type="text"
+                onClick={(event) => event.stopPropagation()}
+              />
+            </form>
+          ) : (
+            <div
+              className="postText"
+              style={{ cursor: "text" }}
+              onClick={(event) => {
+                setEditable(true);
+                event.stopPropagation();
+              }}
+            >
+              {post.desc}
+            </div>
+          )}
+
+
           <img className="postImg" src={PF + post.img} alt="" />
         </div>
         <div className="postBottom">
@@ -183,9 +175,6 @@ const deleteHandler = () => {
             />
             <span className="postLikeCounter">{like} people Appreciate it</span>
           </div>
-          {/* <div className="postBottomRight">
-            <span className="postCommentText">{post.comment} comments</span>
-          </div> */}
         </div>
       </div>
     </div>

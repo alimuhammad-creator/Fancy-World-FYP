@@ -29,11 +29,11 @@ router.put("/:id", async (req, res) => {
   }
 });
 //delete a post
-
 router.delete("/:id", async (req, res) => {
-  try {
+try {
     const post = await Post.findById(req.params.id);
-     if (post.userId === req.body.userId) {
+
+    if (post._id == req.params.id) {
       await post.deleteOne();
       res.status(200).json("the post has been deleted");
     } else {
@@ -43,6 +43,7 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 //like / dislike a post
 
 router.put("/:id/like", async (req, res) => {
