@@ -1,15 +1,6 @@
 import "./share.css";
-// import {
-//   PermMedia,
-//   Label,
-//   Room,
-//   EmojiEmotions,
-//   Cancel,
-// } from "@material-ui/icons";
-import {
-  PermMedia,
-  Cancel,
-} from "@material-ui/icons";
+
+import { PermMedia, Cancel } from "@material-ui/icons";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
@@ -76,22 +67,11 @@ export default function Share() {
                 style={{ display: "none" }}
                 type="file"
                 id="file"
-                accept=".png,.jpeg,.jpg"                         //Add MP4 Later
+                accept=".png,.jpeg,.jpg"                        
                 onChange={(e) => setFile(e.target.files[0])}
               />
             </label>
-            {/* <div className="shareOption">
-              <Label htmlColor="blue" className="shareIcon" />
-              <span className="shareOptionText">Tag</span>
-            </div> */}
-            {/* <div className="shareOption">
-              <Room htmlColor="green" className="shareIcon" />
-              <span className="shareOptionText">Location</span>
-            </div>
-            <div className="shareOption">
-              <EmojiEmotions htmlColor="goldenrod" className="shareIcon" />
-              <span className="shareOptionText">Feelings</span>
-            </div> */}
+
           </div>
           <button className="shareButton" type="submit">
             Share

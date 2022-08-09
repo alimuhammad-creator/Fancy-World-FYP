@@ -86,13 +86,17 @@ export default function Rightbar({ user }) {
             <span className="rightbarInfoValue">{user.from}</span>
           </div>
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">Relationship:</span>
+            <span className="rightbarInfoKey">Seller Type:</span>
             <span className="rightbarInfoValue">
               {user.relationship === 1
-                ? "Single"
-                : user.relationship === 1
-                ? "Married"
-                : "-"}
+                ? "Importer"
+                : user.relationship === 2
+                ? "Exporter"
+                : user.relationship === 3
+                ? "Local Buyer"
+                : user.relationship === 4
+                ? "Local Seller"
+                : "_"}
             </span>
           </div>
         </div>
