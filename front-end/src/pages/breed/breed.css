@@ -1,0 +1,182 @@
+.mainphoto{
+    width: 100%;
+    height: 588px;
+}
+
+.maintitle{
+    position: absolute;
+    color: white;
+    font-size: 100px;
+    margin-top: 160px;
+    margin-left: 63px;
+    padding: 50px 0;
+    /* text-align: center; */
+}
+
+.slogan{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    margin-top: 290px;
+    margin-left: 330px;
+    padding: 50px 0;
+}
+
+.homelogo{
+    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+    margin-left: 150px;
+}
+
+.firstpara{
+    font-size: 27px;
+position: absolute; 
+margin-top: 120px;
+width: 500px; 
+margin-left: 650px;
+text-align: justify;
+}
+
+
+.titleone{
+    font-size: 80px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+    margin-top: 30px;
+    margin-left: 150px;
+    padding: 50px 0;
+
+}
+
+.breed1{
+    margin-left: 50px;
+    width: 400px;
+    height: 300px;
+}
+
+.breed2{
+    margin-left: 28px;
+    width: 400px;
+    height: 300px;
+}
+
+.breed3{
+    margin-left: 28px;
+    width: 400px;
+    height: 300px;
+}
+
+.breed4{
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 400px;
+    height: 300px;
+}
+
+.breed5{
+    margin-top: 40px;
+    margin-left: 28px;
+    width: 400px;
+    height: 300px;
+}
+
+.breed6{
+    margin-top: 40px;
+    margin-left: 28px;
+    width: 400px;
+    height: 300px;
+}
+
+
+.footer{
+  margin-top: 100px;
+  height: 200px;
+  width: 100%;
+  background-color: #674EA7;
+  }
+
+  .footerback{
+    height: 50px;
+    width: 100%;
+    background-color: #674EA7;
+    }
+
+.contactus{
+    position: absolute;
+    margin-top: 10px;
+    color: white;
+    font-size: 50px;
+    margin-left: 50px;
+}
+
+.phoneicon{
+    margin-top: 100px;
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+.emailicon{
+    margin-top: 160px;
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+.addressicon{
+    margin-top: 150px;
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+
+.footerphone{
+    margin-top: 100px;
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    margin-left: 25px;
+}
+
+.footernum{
+    position: absolute;
+    margin-top: 140px;
+    color: white;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.footerem{
+    /* position: absolute; */
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.footeremail{
+    /* position: absolute; */
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.footeraddress{
+    /* position: absolute; */
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.footeraddre{
+    /* position: absolute; */
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+}

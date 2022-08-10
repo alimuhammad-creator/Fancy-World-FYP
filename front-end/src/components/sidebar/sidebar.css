@@ -46,6 +46,13 @@
   cursor: pointer;
 }
 
+.breedlearn{
+  cursor: pointer;
+  margin-top: 20px;
+  width: 280px;
+  height: 280px;
+}
+
 .sidebarvideo {
   width: 285px;
   height: 200px;

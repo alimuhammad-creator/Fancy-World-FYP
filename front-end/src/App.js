@@ -13,6 +13,7 @@ import { AuthContext } from "./context/AuthContext";
 import Messenger from "./pages/messenger/Messenger";
 import Mainhome from "./pages/mainhome/Mainhome";
 import About from "./pages/about/About";
+import Breed from "./pages/breed/Breed";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -21,6 +22,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           {user ? <Home /> : <Register />}
+        </Route>
+        <Route exact path="/breed">
+          {user ? <Breed/> : <Login/>}
         </Route>
         <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
         <Route path="/register">

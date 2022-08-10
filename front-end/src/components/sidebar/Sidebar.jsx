@@ -63,6 +63,12 @@ export default function Sidebar() {
            href="https://www.youtube.com/c/SultanabadFancyFarming/videos" 
            className="youtubesidebar">Watch More on YouTube</button>
           </Link>
+
+          <Link to="/breed" style={{ textDecoration: "none" }}>
+          <img className="breedlearn" src="/assets/breedlearn.png" alt="" />
+          </Link>
+
+          
          
           {/* <img className="rightbarchicken" src="/assets/chickens/chickenleft.png" alt="" /> */}
           

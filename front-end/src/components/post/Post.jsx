@@ -121,9 +121,13 @@ export default function Post({ post }) {
               <MenuItem
                 onClick={handleClose}
               >
+                <div className="divedit">
                 <button className="posteditbutton" onClick={() => handleEdit(post)} >Edit &nbsp;</button>
-
+                </div>
+                <div >
                 <button className="postdeletebutton" onClick={deleteHandler} >Delete</button>
+                </div>
+                
               </MenuItem>
             </Menu>
           )}

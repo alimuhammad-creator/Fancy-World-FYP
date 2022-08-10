@@ -77,3 +77,16 @@
     border-bottom: 1px dashed gray;
     font-size: 15px;
 }
+
+.posteditbutton{
+  cursor: pointer;
+  margin-top: 0px;
+  position:sticky;
+}
+
+.postdeletebutton{
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: -50px;
+  position: absolute;
+}
