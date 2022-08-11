@@ -78,15 +78,34 @@
     font-size: 15px;
 }
 
+
+
+.editinput{
+  width: 100%;
+  font-size: 15px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid rgb(233, 231, 227);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: rgb(233, 231, 227);
+}
+
+.postText{
+  width: auto;
+}
+
 .posteditbutton{
   cursor: pointer;
-  margin-top: 0px;
+  margin-top: 20px;
   position:sticky;
+  width: 50px;
 }
 
 .postdeletebutton{
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: -27px;
   margin-left: -50px;
   position: absolute;
 }

@@ -136,8 +136,8 @@ export default function Post({ post }) {
         <div className="postCenter">
 
           {editable ? (
-            <form onSubmit={handleEditPost}>
-              <input
+            <form className="editform" onSubmit={handleEditPost}>
+              <input className="editinput"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 onBlur={() => {
