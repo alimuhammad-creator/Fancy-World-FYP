@@ -71,6 +71,18 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
+//temp
+// router.get("/allposts", async (req, res) =>{
+//   try{
+//     const allposts = await Post.find(Post._id);
+//     res.status(200).json(allposts);
+//   }
+//   catch (err){
+//     res.status(500).json(err);}
+// });
+//temp
+
 //get timeline posts
 
 router.get("/timeline/:userId", async (req, res) => {

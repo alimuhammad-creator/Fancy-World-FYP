@@ -40,7 +40,7 @@ function App() {
           {user ? <Redirect to="/" /> : <About />}
         </Route>
         <Route path="/profile/:username">
-          <Profile />
+          {user ? <Profile/> : <Login/>}
         </Route>
       </Switch>
     </Router>

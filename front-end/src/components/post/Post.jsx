@@ -70,11 +70,8 @@ export default function Post({ post }) {
   }
 
   const handleEditPost = async (e) => {
-    //e.preventdefualt();
     e.stopPropagation();
-
-
-    try {
+   try {
       await axios.put("/posts/" + editPostId, { ...post, desc: name });
       setEditable(false)
       setName("")
