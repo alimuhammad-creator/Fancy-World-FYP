@@ -173,6 +173,19 @@ text-align: justify;
     margin-left: 50px;
 }
 
+.breedlearnmore{
+    margin-top: 50px;
+    margin-left: 425px;
+  width: 500px;
+  height: 50px;
+  background-color: #FF0000;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
 .footeraddre{
     /* position: absolute; */
     margin-top: 10px;

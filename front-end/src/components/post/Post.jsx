@@ -10,7 +10,6 @@ import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
-//Testing 
 
 export default function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
@@ -60,6 +59,7 @@ export default function Post({ post }) {
   const deleteHandler = () => {
     try {
       axios.delete("/posts/" + post._id);
+      window.location.reload();
     } catch (err) { }
   };
 
@@ -112,6 +112,22 @@ export default function Post({ post }) {
           >
             <MoreVert />
           </IconButton>
+
+          {currentUser.isAdmin === true && (
+            <Menu
+            anchorEl={anchorEl}
+            keepMounted onClose={handleClose}
+            open={open}>
+            <MenuItem
+              onClick={handleClose}
+            >
+              <div >
+              <button onClick={deleteHandler} >Delete</button>
+              </div>
+              
+            </MenuItem>
+          </Menu>
+          )}
 
           {currentUser._id === post.userId && (
             <Menu

@@ -1,6 +1,5 @@
 import "./rightbar.css";
-//import { Users } from "../../dummyData";
-//import Online from "../online/Online";
+
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -12,8 +11,8 @@ export default function Rightbar({ user }) {
   const [friends, setFriends] = useState([]);
   const { user: currentUser, dispatch } = useContext(AuthContext);
   const [followed, setFollowed] = useState(
-    currentUser.followings.includes(user?.id)
-  );
+    currentUser.followings.includes(user?.id));
+  
 
   useEffect(() => {
     const getFriends = async () => {
@@ -26,6 +25,13 @@ export default function Rightbar({ user }) {
     };
     getFriends();
   }, [user]);
+
+  const messageClick = () =>{
+  try {
+    ;
+    axios.post("/conversations", {senderId : currentUser._id,  receiverId : user._id })
+  } catch (err){}
+};
 
   const handleClick = async () => {
     try {
@@ -44,24 +50,15 @@ export default function Rightbar({ user }) {
     } catch (err) {
     }
   };
+ 
 
   const HomeRightbar = () => {
     return (
       <>
-        {/* <div className="birthdayContainer">
-          <img className="birthdayImg" src="assets/gift.png" alt="" />
-          <span className="birthdayText">
-            <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
-          </span>
-        </div> */}
+
         <span className="sponsored">Sponsored</span>
         <video controls loop autoPlay className="rightbarAd" src="assets/Ad.mp4" alt="" />
-        {/* <h4 className="rightbarTitle">Online Friends</h4>
-        <ul className="rightbarFriendList">
-          {Users.map((u) => (
-            <Online key={u.id} user={u} />
-          ))}
-        </ul> */}
+  
       </>
     );
   };
@@ -75,6 +72,19 @@ export default function Rightbar({ user }) {
             {followed ? <Remove /> : <Add />}
           </button>
         )}
+
+        {/* {
+          user.username !== currentUser.username &&   (
+            <button onClick={handleClick}>
+              {followed ? "Unfollow" : ""}
+            </button>
+          )
+        } */}
+        <Link to="/messenger" style={{textDecoration: "none"}}>
+        {user.username !== currentUser.username &&(
+          <button className="messagebutton" onClick={messageClick}>Message</button>
+        )}
+        </Link>
         <h4 className="rightbarTitle">User information</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
@@ -100,7 +110,7 @@ export default function Rightbar({ user }) {
             </span>
           </div>
         </div>
-        <h4 className="rightbarTitle">Your Followings</h4>
+        <h4 className="rightbarTitle">Followings</h4>
         <div className="rightbarFollowings">
           {friends.map((friend) => (
             <Link

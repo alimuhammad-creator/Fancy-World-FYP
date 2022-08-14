@@ -58,9 +58,8 @@ export default function Sidebar() {
           <span className="sidebarhighlight">SFF Highlights</span>
           <video controls loop autoPlay className="sidebarvideo" src="assets/sidebar.mp4" alt="" />
           
-          <Link >
-          <button
-           href="https://www.youtube.com/c/SultanabadFancyFarming/videos" 
+          <Link to={{ pathname: "https://www.youtube.com/c/SultanabadFancyFarming/videos"}} target="_blank" >
+          <button 
            className="youtubesidebar">Watch More on YouTube</button>
           </Link>
 

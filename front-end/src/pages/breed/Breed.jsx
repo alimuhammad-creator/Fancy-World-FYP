@@ -1,4 +1,5 @@
 import "./breed.css";
+import { Link } from "react-router-dom";
 import Topbar from "../../components/topbar/Topbar";
 
 
@@ -25,6 +26,10 @@ export default function Breed () {
          <img className="breed4" src="/assets/breed5.jpg" alt="" />
          <img className="breed5" src="/assets/breed6.jpg" alt="" />
          <img className="breed6" src="/assets/breed3.jpg" alt="" />
+
+         <Link to={{ pathname: "https://www.youtube.com/c/SultanabadFancyFarming/videos"}} target="_blank">
+         <button className="breedlearnmore">Learn More About Top Breeds on our YouTube Channel</button>
+         </Link>
          
          <img className="footer" src="/assets/footter.jpg" alt="" />
          <div className="footerback"> </div>

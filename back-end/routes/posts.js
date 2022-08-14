@@ -33,7 +33,7 @@ router.delete("/:id", async (req, res) => {
 try {
     const post = await Post.findById(req.params.id);
 
-    if (post._id == req.params.id) {
+    if (post._id == req.params.id || req.body.isAdmin) {
       await post.deleteOne();
       res.status(200).json("the post has been deleted");
     } else {
@@ -83,6 +83,21 @@ router.get("/timeline/:userId", async (req, res) => {
       })
     );
     res.status(200).json(userPosts.concat(...friendPosts));
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/allposts", async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.params.userId);
+    const userPosts = await Post.find({ userId: currentUser._id });
+    const allPosts = await Promise.all(
+      // currentUser.followings.map((friendId) => {
+        // return Post.find();
+      // })
+    );
+    res.status(200).json(allPosts);
   } catch (err) {
     res.status(500).json(err);
   }
