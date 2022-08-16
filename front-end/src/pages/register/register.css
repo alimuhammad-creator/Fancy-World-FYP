@@ -36,9 +36,9 @@
 }
 
 .loginBox{
-    height: 400px;
+    height: 470px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -48,8 +48,18 @@
 .loginInput{
     height: 50px;
     border-radius: 10px;
+    margin-bottom: 10px;
     border: 1px solid gray;
     font-size: 18px;
+    padding-left: 20px;
+}
+
+.sellertype{
+  height: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    font-size: 13px;
     padding-left: 20px;
 }
 
@@ -60,6 +70,7 @@
 .loginButton{
     height: 50px;
     border-radius: 10px;
+    margin-bottom: 10px;
     border: none;
     background-color: #674EA7;
     color: white;

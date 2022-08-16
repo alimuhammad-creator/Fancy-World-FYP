@@ -1,5 +1,4 @@
 import "./rightbar.css";
-
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -28,7 +27,6 @@ export default function Rightbar({ user }) {
 
   const messageClick = () =>{
   try {
-    ;
     axios.post("/conversations", {senderId : currentUser._id,  receiverId : user._id })
   } catch (err){}
 };
@@ -73,13 +71,6 @@ export default function Rightbar({ user }) {
           </button>
         )}
 
-        {/* {
-          user.username !== currentUser.username &&   (
-            <button onClick={handleClick}>
-              {followed ? "Unfollow" : ""}
-            </button>
-          )
-        } */}
         <Link to="/messenger" style={{textDecoration: "none"}}>
         {user.username !== currentUser.username &&(
           <button className="messagebutton" onClick={messageClick}>Message</button>
@@ -92,7 +83,7 @@ export default function Rightbar({ user }) {
             <span className="rightbarInfoValue">{user.city}</span>
           </div>
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">From:</span>
+            <span className="rightbarInfoKey">Shop Location:</span>
             <span className="rightbarInfoValue">{user.from}</span>
           </div>
           <div className="rightbarInfoItem">

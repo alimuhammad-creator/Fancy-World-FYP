@@ -1,6 +1,7 @@
 import axios from "axios";
 import Maintopbar from "../../components/maintopbar/Maintopbar";
 import { useRef } from "react";
+import {Link} from "react-router-dom";
 import "./register.css";
 import { useHistory } from "react-router";
 
@@ -9,17 +10,23 @@ export default function Register() {
   const email = useRef();
   const password = useRef();
   const passwordAgain = useRef();
+  const city = useRef();
+  const from = useRef();
+  const relationship =useRef();
   const history = useHistory();
 
   const handleClick = async (e) => {
     e.preventDefault();
     if (passwordAgain.current.value !== password.current.value) {
-      passwordAgain.current.setCustomValidity("Passwords don't match!");
+      passwordAgain.current.setCustomValidity("Passwords does not match!");
     } else {
       const user = {
         username: username.current.value,
         email: email.current.value,
         password: password.current.value,
+        city: city.current.value,
+        from: from.current.value,
+        relationship: relationship.current.value,
       };
       try {
         await axios.post("/auth/register", user);
@@ -72,10 +79,29 @@ export default function Register() {
               className="loginInput"
               type="password"
             />
+            <input
+             className="loginInput"
+            placeholder = "City"
+            required
+            ref={city}
+            />
+            <input
+            className="loginInput"
+            placeholder = "Shop Location"
+            ref={from}
+            />
+            <input
+             className="sellertype"
+            placeholder ="Seller Type (1=Importer, 2=Exporter, 3=Local Seller, 4=Local Buyer)"
+            ref={relationship}
+            required
+            />
             <button className="loginButton" type="submit">
               Sign Up
             </button>
+            <Link to="/login">
             <button className="loginRegisterButton">Log into Account</button>
+            </Link>
           </form>
         </div>
       </div>

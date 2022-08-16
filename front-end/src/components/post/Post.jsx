@@ -19,14 +19,16 @@ export default function Post({ post }) {
   const { user: currentUser } = useContext(AuthContext);
 
   const [editable, setEditable] = useState(false);
-
   const [name, setName] = useState("");
-  const [editPostId, setEditPostId] = useState(null)
+  const [editPostId, setEditPostId] = useState(null);
 
+  //Fetching Post Likes
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
   }, [currentUser._id, post.likes]);
 
+
+  //Fetching the User of Post
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(`/users?userId=${post.userId}`);
@@ -35,18 +37,16 @@ export default function Post({ post }) {
     fetchUser();
   }, [post.userId]);
 
-
+// Edit Button Opening and Closure
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const open = Boolean(anchorEl);
-
   const handleClose = () => {
     setAnchorEl(null);
   };
+//ends here
 
   const likeHandler = () => {
     try {
@@ -76,9 +76,7 @@ export default function Post({ post }) {
       setEditable(false)
       setName("")
       setEditPostId(null)
-    } catch (err) { }
-
-
+    } catch (err) {}
   }
 
   return (
@@ -86,7 +84,7 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <Link to={`/profile/${user.username}`}>
+            <Link to={`/profile/${user.username}`} style={{ textDecoration: "none" }}>
               <img
                 className="postProfileImg"
                 src={
@@ -96,7 +94,7 @@ export default function Post({ post }) {
                 }
                 alt=""
               />
-            </Link>
+              </Link>
             <span className="postUsername">{user.username}</span>
             <span className="postDate">{format(post.createdAt)}</span>
           </div>
@@ -191,7 +189,7 @@ export default function Post({ post }) {
               onClick={likeHandler}
               alt=""
             />
-            <span className="postLikeCounter">{like} people Appreciate it</span>
+            <span className="postLikeCounter">{like} people Appreciated it</span>
           </div>
         </div>
       </div>

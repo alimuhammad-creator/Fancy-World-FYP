@@ -10,11 +10,10 @@ export default function Sidebar() {
           <video controls loop autoPlay className="sidebarvideo" src="assets/sidebar.mp4" alt="" />
           
           <Link to={{ pathname: "https://www.youtube.com/c/SultanabadFancyFarming/videos"}} target="_blank" >
-          <button 
-           className="youtubesidebar">Watch More on YouTube</button>
+          <button className="youtubesidebar">Watch More on YouTube</button>
           </Link>
 
-          <Link to="/breed" style={{ textDecoration: "none" }}>
+          <Link to="/breed" style={{ textDecoration: "none" }} >
           <img className="breedlearn" src="/assets/breedlearn.png" alt="" />
           </Link>
           </ul>

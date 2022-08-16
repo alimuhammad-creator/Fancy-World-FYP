@@ -101,6 +101,10 @@
   margin-top: 20px;
   position:sticky;
   width: 50px;
+  border: none;
+  color: white;
+  background-color: green;
+
 }
 
 .postdeletebutton{
@@ -108,4 +112,7 @@
   margin-top: -27px;
   margin-left: -50px;
   position: absolute;
+  border: none;
+  color: white;
+  background-color: red;
 }

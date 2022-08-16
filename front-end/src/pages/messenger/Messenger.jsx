@@ -108,7 +108,6 @@ export default function Messenger() {
           <div className="chatMenuWrapper">
           <img className="conversationicon" src="/assets/conversationicon2.png" alt="" />
             <span className="ConversationTitle">Conversations</span>
-            {/* <input placeholder="Search for friends" className="chatMenuInput" /> */}
             {conversations.map((c) => (
               <div onClick={() => setCurrentChat(c)}>
                 <Conversation conversation={c} currentUser={user} />
