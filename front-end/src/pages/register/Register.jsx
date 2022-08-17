@@ -90,12 +90,13 @@ export default function Register() {
             placeholder = "Shop Location"
             ref={from}
             />
-            <input
-             className="sellertype"
-            placeholder ="Seller Type (1=Importer, 2=Exporter, 3=Local Seller, 4=Local Buyer)"
-            ref={relationship}
-            required
-            />
+            <select ref={relationship} required className="sellertype">
+              <option value="" disabled selected hidden>Select Your Seller Type</option>
+              <option value="1">Importer</option>
+              <option value="2">Exporter</option>
+              <option value="3">Local Seller</option>
+              <option value="4">Local Buyer</option>
+            </select>
             <button className="loginButton" type="submit">
               Sign Up
             </button>

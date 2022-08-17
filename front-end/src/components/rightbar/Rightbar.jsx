@@ -31,6 +31,13 @@ export default function Rightbar({ user }) {
   } catch (err){}
 };
 
+//Delete User button onclick
+const deleteuser = () =>{  
+  try {
+    axios.delete("/users/admin/" + user._id, {userId: currentUser._id});
+  } catch (err) {}
+};
+
   const handleClick = async () => {
     try {
       if (followed) {
@@ -101,6 +108,11 @@ export default function Rightbar({ user }) {
             </span>
           </div>
         </div>
+        <Link to="/" style={{textDecoration: "none"}}>
+        {currentUser.isAdmin=== true &&(
+          <button className="deleteuserbutton" onClick={deleteuser}>Remove this User</button>
+        )}
+        </Link>
         <h4 className="rightbarTitle">Followings</h4>
         <div className="rightbarFollowings">
           {friends.map((friend) => (

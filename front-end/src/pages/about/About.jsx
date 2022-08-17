@@ -11,13 +11,6 @@ export default function About () {
     <div className="about">
        <div>
        <span className="abouttitle">About FANCY WORLD</span>
-      {/* <p  className="paraabout">FANCY WORLD is a marketplace that is unique and dedicated to Fancy Farming Business. 
-        Our goal is to create a platform where Importers, Exporters, Local buyers and sellers 
-        of fancy breeds can connect with each other and directly make purchases avoiding any 
-        third-party commissions. This will bring quality and fair competition to this business. 
-        We believe this business has huge potential and in near future, it will contribute a lot 
-        to the economic development of the country.</p> */}
-        {/* <img className="aboutmainphoto" src="/assets/aboutmainphoto.jpg" alt="" /> */}
        </div>
       
         <div> 

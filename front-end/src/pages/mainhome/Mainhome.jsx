@@ -27,22 +27,7 @@ export default function Mainhome () {
          <img className="breed6" src="/assets/breed6.jpg" alt="" />
          
          <img className="footer" src="/assets/footter.jpg" alt="" />
-         <div className="footerback"> </div>
-
-         {/* <span className="contactus">Contact Info</span>
-         </div>
-         <img className="phoneicon" src="/assets/phoneicon.png" alt="" />
-         <span className="footerphone">Phone</span>
-         <span className="footernum">03360120098</span>
-         <img className="emailicon" src="/assets/emailicon.png" alt="" />
-         <span className="footerem">Email</span>
-         <span className="footeremail">contact@ssf.com</span>
-         <img className="addressicon" src="/assets/addressicon.png" alt="" />
-         <span className="footeraddress">Address</span>
-         <span className="footeraddre">Sultanabad Village Near MirpurKhas Sindh Pakistan</span> */}
-         
-         
-         
+         <div className="footerback"> </div>         
     </div>
     </>
   );
