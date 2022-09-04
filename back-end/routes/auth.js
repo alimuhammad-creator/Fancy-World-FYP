@@ -8,6 +8,10 @@ router.post("/register", async (req, res) => {
     //generate new password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const user1 = await User.findOne({ email: req.body.email });
+    user1 && res.status(404).json("Email Already Exists");
+    const user2 = await User.findOne({ username: req.body.username });
+    user2 && res.status(404).json("Username already Exists");
 
     //create new user
     const newUser = new User({

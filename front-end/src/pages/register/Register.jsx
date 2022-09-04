@@ -17,6 +17,9 @@ export default function Register() {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    // if (email === email.current.value){
+    //   email.current.setCustomValidity("Email Already Exists");
+    // }
     if (passwordAgain.current.value !== password.current.value) {
       passwordAgain.current.setCustomValidity("Passwords does not match!");
      } else {
@@ -29,7 +32,7 @@ export default function Register() {
         relationship: relationship.current.value,
       };
       try {
-        await axios.post("/auth/register", user);
+         await axios.post("/auth/register", user);
         history.push("/login");
       } catch (err) {
         console.log(err);
