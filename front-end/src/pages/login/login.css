@@ -82,6 +82,12 @@
     cursor: pointer;
 }
 
+.errormessage{
+  color: red;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
 .loginRegisterButton{
     width: 60%;
     margin-left: 90px;

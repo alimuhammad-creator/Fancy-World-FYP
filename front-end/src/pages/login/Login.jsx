@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import Maintopbar from "../../components/maintopbar/Maintopbar";
 import "./login.css";
 import { loginCall } from "../../apiCalls";
@@ -10,15 +10,19 @@ export default function Login() {
   const email = useRef();
   const password = useRef();
   const { isFetching, dispatch } = useContext(AuthContext);
-
-  const handleClick = (e) => {
+  const [error,setError]=useState(null);
+ 
+ const handleClick = (e) => {
     e.preventDefault();
     loginCall(
       { email: email.current.value, password: password.current.value },
       dispatch
-    );
+    ).catch((err) =>{
+      setError(err.response.data.message);
+    }); 
   };
-
+  
+  
   return (
     <>
     <Maintopbar/>
@@ -55,9 +59,9 @@ export default function Login() {
                 "Log In"
               )}
             </button>
-            <span className="loginForgot">Forgot Password?</span>
-
-            <Link to="/register">
+            <div className="errormessage">{error}</div>
+            {/* <span className="loginForgot">Forgot Password?</span> */}
+              <Link to="/register">
             <button className="loginRegisterButton">
               Create a New Account</button>
             </Link>
