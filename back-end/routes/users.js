@@ -89,6 +89,24 @@ router.get("/friends/:userId", async (req, res) => {
   }
 });
 
+//allusers
+router.get('/test', (req, res) =>{
+  const searchfield = req.query.username;
+  User.find({username:{$regex: searchfield, $options: '$i'}})
+  .then(data=>{
+     res.send(data);
+  })
+  });
+
+//search a user
+router.get('/search', (req, res) =>{
+  const searchfield = req.query.username;
+  User.find({username:{$regex: searchfield, $options: '$i'}})
+  .then(data=>{
+     res.send(data);
+  })
+});
+
 //follow a user
 
 router.put("/:id/follow", async (req, res) => {

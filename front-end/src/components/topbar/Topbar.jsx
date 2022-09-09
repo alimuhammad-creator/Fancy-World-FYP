@@ -4,15 +4,39 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
+import { useState } from "react";
+import axios from "axios";
+
 
 export default function Topbar() {
   const { user } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [query, setQuery]=useState("");
+  const { user: currentUser } = useContext(AuthContext);
 
  function  logout(){
     localStorage.clear();
     window.location.href = '/login';
   };
+  // console.log(query);
+  // console.log(user.filter(user=>user.username.includes("al")));
+//  filterContent(user, searchTerm){
+//   const result = user.filter((users) => user.username.includes(searchTerm));
+//   this.setState({users: result});
+//  }
+  const handleTextSearch =(e)=>{
+    const searchTerm = e.currentTarget.value;
+    try{
+    axios.get("/users/search?username=" ).then((res)=>{
+      if (res.data.success) {
+        this.filterContent(res.data.users, searchTerm)
+      }
+    })
+    } catch(err){
+
+    }
+
+  }
 
   return (
     <div className="topbarContainer">
@@ -21,12 +45,19 @@ export default function Topbar() {
           <span className="logo">FANCY WORLD</span>
         </Link>
       </div>
+      <Link to="/adminpanel" style={{textDecoration: "none"}}>
+        {currentUser.isAdmin=== true &&(
+          <span className="adminpanelbutton" >ADMIN PANEL</span>
+        )}
+        </Link>
       <div className="topbarCenter">
         <div className="searchbar">
           <Search className="searchIcon" />
           <input
             placeholder="Search for Existing and New Breeds"
             className="searchInput"
+            // onChange={e=>{setQuery(e.target.value)}}
+            onChange={handleTextSearch}
           />
         </div>
       </div>

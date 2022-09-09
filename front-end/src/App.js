@@ -14,6 +14,7 @@ import Messenger from "./pages/messenger/Messenger";
 import Mainhome from "./pages/mainhome/Mainhome";
 import About from "./pages/about/About";
 import Breed from "./pages/breed/Breed";
+import Adminpanel from "./pages/adminpanel/Adminpanel";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/profile/:username">
           {user ? <Profile/> : <Login/>}
+        </Route>
+        <Route path="/adminpanel">
+          {user ? <Adminpanel/> : <Login/>}
         </Route>
       </Switch>
     </Router>
