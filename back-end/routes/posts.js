@@ -89,20 +89,14 @@ router.get("/timeline/:userId", async (req, res) => {
 });
 
 //temp
-router.get("/allposts", async (req, res) => {
-  try {
-    const userPosts = await Post.find();
-    console.log(userPosts);
-    // const allPosts = await Promise.all(
-    //    userPosts.map(() => {
-    //    return Post.find();
-    //   })
-    // );
-    return res.status(200).json(userPosts);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get("/allposts", async (req, res) => {
+//   try {
+//     const posts = await Post.find().lean();
+//     return res.status(200).json(posts);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 //temp
 
 //get user's all posts
