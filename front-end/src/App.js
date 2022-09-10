@@ -15,10 +15,24 @@ import Mainhome from "./pages/mainhome/Mainhome";
 import About from "./pages/about/About";
 import Breed from "./pages/breed/Breed";
 import Adminpanel from "./pages/adminpanel/Adminpanel";
+import useTimeout from "./components/useTimeout/useTimeout";
 
 function App() {
   const { user } = useContext(AuthContext);
+
+  function  logout(){
+    localStorage.clear();
+    window.location.href = '/login';
+  };
+  //1198995 19 Minutes 58 seconds
+  //1200000  20 Minutes
+//12000 12 Seconds 14000 14 seconds
+
+  useTimeout(()=> alert("Session Timed Out. Please Login Again"), 1198000);
+  setTimeout( function() { logout(); }, 1200000);
+ 
   return (
+    <div>
     <Router>
       <Switch>
         <Route exact path="/">
@@ -48,6 +62,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </div>
   );
 }
 
