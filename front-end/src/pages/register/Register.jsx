@@ -14,7 +14,7 @@ export default function Register() {
   const from = useRef();
   const relationship = useRef();
   const history = useHistory();
-  const [error,setError]=useState(null);
+  const [error,setError]=useState("Welcome");
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -103,7 +103,13 @@ export default function Register() {
               <button className="loginButton" type="submit">
                 Sign Up
               </button>
-              <div className="errormessage">{error}</div>
+              <script>
+                if(setError!=null){
+                  alert(error)
+                  }
+                {/* myFunction() {alert(error)}  */}
+                </script>
+              {/* <div className="errormessage">{error}</div> */}
               <Link to="/login">
                 <button className="loginRegisterButton">Log into Account</button>
               </Link>

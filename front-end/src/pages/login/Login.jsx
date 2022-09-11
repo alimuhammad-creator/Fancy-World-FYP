@@ -10,7 +10,7 @@ export default function Login() {
   const email = useRef();
   const password = useRef();
   const { isFetching, dispatch } = useContext(AuthContext);
-  const [error,setError]=useState(null);
+  const [error,setError]=useState("Welcome");
  
  const handleClick = (e) => {
     e.preventDefault();
@@ -59,8 +59,8 @@ export default function Login() {
                 "Log In"
               )}
             </button>
-            <div className="errormessage">{error}</div>
-            {/* <span className="loginForgot">Forgot Password?</span> */}
+            <script>function myFunction() {alert(error)} </script>
+            {/* <div className="errormessage">{error}</div> */}
               <Link to="/register">
             <button className="loginRegisterButton">
               Create a New Account</button>
