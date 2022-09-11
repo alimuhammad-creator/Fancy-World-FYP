@@ -41,6 +41,7 @@ export default function Topbar() {
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
+      {/* <img className="topbarlogo" src="/assets/chickens/logo.png" alt="" /> */}
         <Link to="/" style={{ textDecoration: "none" }}>
           <span className="logo">FANCY WORLD</span>
         </Link>

@@ -87,6 +87,11 @@
   color: white;
 }
 
+.topbarlogo{
+  width: 40px;
+  height: 40px;
+}
+
 .topbarLink {
   margin-right: 10px;
   font-size: 14px;
