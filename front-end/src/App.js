@@ -28,7 +28,7 @@ function App() {
   //1200000  20 Minutes
 //12000 12 Seconds 14000 14 seconds
 
-  useTimeout(()=> alert("Session Timed Out. Please Login Again"), 1198000);
+  useTimeout(()=> alert("Session Timed Out. Please Login Again"), 1198995);
   setTimeout( function() { logout(); }, 1200000);
  
   return (

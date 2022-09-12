@@ -52,7 +52,7 @@ export default function Topbar() {
         )}
         </Link>
       <div className="topbarCenter">
-        <div className="searchbar">
+        {/* <div className="searchbar">
           <Search className="searchIcon" />
           <input
             placeholder="Search for Existing and New Breeds"
@@ -60,7 +60,7 @@ export default function Topbar() {
             // onChange={e=>{setQuery(e.target.value)}}
             onChange={handleTextSearch}
           />
-        </div>
+        </div> */}
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
